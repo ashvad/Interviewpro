@@ -1,0 +1,47 @@
+{%extends 'common.html'%}
+{%block body_block%}
+<div class="container">
+ <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Email</th>
+                    <th>income</th>
+                    <th>Ip_address</th>
+                </tr>
+
+                {%for hello in address%}
+                <tr>
+                    <td>
+                        {{hello.Name}}
+                    </td>
+                    <td>
+                        {{hello.Date}}
+                    </td>
+                    <td>
+                        {{hello.Email}}
+                    </td>
+                    <td>
+                        {{hello.income}}
+                    </td>
+                    <td>
+                        {{hello.Ip_address}}
+                    </td>
+                    <td>
+                        <a href="{%url 'deleteaddress' hello.id%}" class="btn btn-danger">Delete</a>
+                    </td>
+
+                    {%endfor%}
+                </tr>
+            </table>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+{%endblock%}
+
+
